@@ -1,5 +1,5 @@
 <div align="center">
-  <img width="260" alt="AJStudiozLogo" src="https://z-cdn-media.chatglm.cn/files/22e406bf-d9da-46b0-b116-686dd8628a3c.png?auth_key=1864866313-6644253785834aae9f36529c0b483d71-0-57ffec399a7d44d551df1343784df05f" />
+  <img width="260" alt="AJStudiozLogo" src="./public/aj-logo.png" />
 </div>
 
 <h1 align="center">CodeCraft - Learn to Code</h1>
@@ -122,7 +122,7 @@ Structured curriculum covering:
 
 ---
 
-## <img src="https://z-cdn-media.chatglm.cn/files/22e406bf-d9da-46b0-b116-686dd8628a3c.png?auth_key=1864866313-6644253785834aae9f36529c0b483d71-0-57ffec399a7d44d551df1343784df05f" width="30" height="30" /> About AJ STUDIOZ
+## <img src="./public/aj-logo.png" width="30" height="30" /> About AJ STUDIOZ
 
 **AJ STUDIOZ** is a pioneering technology company specializing in AI-driven solutions and digital innovation. With a focus on creating impactful applications that solve real-world problems, AJ STUDIOZ combines cutting-edge artificial intelligence with user-centric design.
 
@@ -136,7 +136,7 @@ To democratize technology and make advanced learning solutions accessible to eve
 
 ---
 
-## <img src="https://z-cdn-media.chatglm.cn/files/22e406bf-d9da-46b0-b116-686dd8628a3c.png?auth_key=1864866313-6644253785834aae9f36529c0b483d71-0-57ffec399a7d44d551df1343784df05f" width="30" height="30" /> Powered by AJ STUDIOZ Innovation
+## <img src="./public/aj-logo.png" width="30" height="30" /> Powered by AJ STUDIOZ Innovation
 
 This project represents the commitment of **AJ STUDIOZ** to educational excellence and technological innovation. Our platform features:
 
@@ -172,7 +172,7 @@ For technical support or inquiries:
 ---
 
 <div align="center">
-  <img src="https://z-cdn-media.chatglm.cn/files/22e406bf-d9da-46b0-b116-686dd8628a3c.png?auth_key=1864866313-6644253785834aae9f36529c0b483d71-0-57ffec399a7d44d551df1343784df05f" width="50" height="50" />
+  <img src="./public/aj-logo.png" width="50" height="50" />
   <p><strong>Built with ❤️ by AJ STUDIOZ</strong></p>
   <p>Empowering Learning Through Technology</p>
 </div>

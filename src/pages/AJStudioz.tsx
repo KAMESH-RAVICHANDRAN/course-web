@@ -21,7 +21,7 @@ const AJStudioz = () => {
             {/* AJ STUDIOZ Logo */}
             <div className="flex justify-center mb-6">
               <img 
-                src="https://z-cdn-media.chatglm.cn/files/22e406bf-d9da-46b0-b116-686dd8628a3c.png?auth_key=1864866313-6644253785834aae9f36529c0b483d71-0-57ffec399a7d44d551df1343784df05f" 
+                src="/aj-logo.png" 
                 alt="AJ STUDIOZ" 
                 className="h-32 w-auto"
               />
