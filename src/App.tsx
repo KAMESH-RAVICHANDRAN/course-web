@@ -17,6 +17,7 @@ import AJStudioz from "./pages/AJStudioz";
 import Privacy from "./pages/Privacy";
 import Terms from "./pages/Terms";
 import NotFound from "./pages/NotFound";
+import Certificate from "./pages/Certificate";
 
 const queryClient = new QueryClient();
 
@@ -33,6 +34,7 @@ const App = () => (
             <Route path="/courses" element={<Courses />} />
             <Route path="/courses/:slug" element={<CourseDetail />} />
             <Route path="/courses/:courseSlug/lessons/:lessonSlug" element={<LessonView />} />
+            <Route path="/courses/:courseSlug/certificate" element={<Certificate />} />
             <Route path="/certifications" element={<Certifications />} />
             <Route path="/dashboard" element={<Dashboard />} />
             <Route path="/about" element={<About />} />

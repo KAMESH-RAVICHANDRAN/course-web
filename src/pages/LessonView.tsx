@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { useParams, Link, useNavigate } from "react-router-dom";
 import Header from "@/components/layout/Header";
+import CodeChallenge from "@/components/lesson/CodeChallenge";
 import { Button } from "@/components/ui/button";
 import { supabase } from "@/integrations/supabase/client";
 import { useAuth } from "@/hooks/useAuth";
@@ -11,7 +12,8 @@ import {
   CheckCircle,
   Loader2,
   Menu,
-  X
+  X,
+  Code
 } from "lucide-react";
 import ReactMarkdown from "react-markdown";
 
@@ -48,6 +50,12 @@ const LessonView = () => {
   useEffect(() => {
     const fetchData = async () => {
       if (!courseSlug || !lessonSlug) return;
+      
+      // Require authentication to access lessons
+      if (!user) {
+        navigate(`/auth?redirect=/courses/${courseSlug}/lessons/${lessonSlug}`);
+        return;
+      }
       
       setLoading(true);
       
@@ -293,6 +301,78 @@ const LessonView = () => {
               >
                 {lesson.content}
               </ReactMarkdown>
+            </div>
+
+            {/* Interactive Coding Challenges */}
+            <div className="mb-12 space-y-6">
+              <div className="flex items-center gap-2 mb-4">
+                <Code className="w-5 h-5 text-accent" />
+                <h2 className="text-2xl font-bold font-serif">Practice Challenge</h2>
+              </div>
+              
+              {/* HTML Challenge Example */}
+              {course.slug === 'html-basics' && (
+                <CodeChallenge
+                  title="Create Your First HTML Element"
+                  description="Create a paragraph element that says 'Hello, World!'"
+                  hints={[
+                    "Use the <p> tag to create a paragraph",
+                    "Place your text between the opening and closing tags",
+                    "Remember to close the tag with </p>"
+                  ]}
+                  starterCode={`<!-- Write your HTML code here -->\n\n`}
+                  solution={`<p>Hello, World!</p>`}
+                  onComplete={markComplete}
+                />
+              )}
+
+              {/* CSS Challenge Example */}
+              {course.slug === 'css-fundamentals' && (
+                <CodeChallenge
+                  title="Style a Button"
+                  description="Create a CSS rule to make a button blue with white text"
+                  hints={[
+                    "Use the 'background-color' property for the blue background",
+                    "Use the 'color' property for white text",
+                    "Target the button with the selector 'button'"
+                  ]}
+                  starterCode={`button {\n  /* Add your CSS properties here */\n}\n`}
+                  solution={`button {\n  background-color: blue;\n  color: white;\n}`}
+                  onComplete={markComplete}
+                />
+              )}
+
+              {/* JavaScript Challenge Example */}
+              {course.slug === 'javascript-essentials' && (
+                <CodeChallenge
+                  title="Create a Function"
+                  description="Write a function that returns the sum of two numbers"
+                  hints={[
+                    "Use the 'function' keyword to define a function",
+                    "The function should take two parameters",
+                    "Use the 'return' keyword to return the sum"
+                  ]}
+                  starterCode={`function sum(a, b) {\n  // Write your code here\n}\n\nconsole.log(sum(5, 3)); // Should output: 8`}
+                  solution={`function sum(a, b) {\n  return a + b;\n}\n\nconsole.log(sum(5, 3));`}
+                  onComplete={markComplete}
+                />
+              )}
+
+              {/* Generic Challenge for other courses */}
+              {!['html-basics', 'css-fundamentals', 'javascript-essentials'].includes(course.slug || '') && (
+                <CodeChallenge
+                  title="Practice Exercise"
+                  description="Try the code example from this lesson"
+                  hints={[
+                    "Review the lesson content above",
+                    "Try to apply what you learned",
+                    "Experiment with different variations"
+                  ]}
+                  starterCode={`// Write your code here\n\n`}
+                  solution={`// Solution will vary based on the lesson content`}
+                  onComplete={markComplete}
+                />
+              )}
             </div>
 
             {/* Complete Button */}

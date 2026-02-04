@@ -36,9 +36,9 @@ const categoryConfig: Record<string, { bg: string; accent: string; gradient: str
 };
 
 const difficultyColors: Record<string, string> = {
-  beginner: "border-green-200 bg-green-50 text-green-700 dark:border-green-800 dark:bg-green-950 dark:text-green-400",
-  intermediate: "border-amber-200 bg-amber-50 text-amber-700 dark:border-amber-800 dark:bg-amber-950 dark:text-amber-400",
-  advanced: "border-red-200 bg-red-50 text-red-700 dark:border-red-800 dark:bg-red-950 dark:text-red-400",
+  beginner: "bg-gradient-to-r from-green-500 to-emerald-500 text-white shadow-sm",
+  intermediate: "bg-gradient-to-r from-amber-500 to-orange-500 text-white shadow-sm",
+  advanced: "bg-gradient-to-r from-red-500 to-rose-500 text-white shadow-sm",
 };
 
 const CourseCard = ({
@@ -70,7 +70,7 @@ const CourseCard = ({
           
           {/* Floating badge */}
           <div className="absolute top-4 right-4">
-            <Badge variant="secondary" className={`${difficultyColors[difficulty]} border`}>
+            <Badge className={`${difficultyColors[difficulty]} border-0 px-3 py-1 font-semibold text-xs uppercase tracking-wide`}>
               {difficulty}
             </Badge>
           </div>

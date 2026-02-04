@@ -13,7 +13,8 @@ import {
   CheckCircle, 
   Circle,
   Loader2,
-  Play
+  Play,
+  Award
 } from "lucide-react";
 
 interface Course {
@@ -52,6 +53,12 @@ const CourseDetail = () => {
   useEffect(() => {
     const fetchCourseData = async () => {
       if (!slug) return;
+      
+      // Require authentication to access courses
+      if (!user) {
+        navigate('/auth?redirect=/courses/' + slug);
+        return;
+      }
       
       setLoading(true);
       
@@ -129,9 +136,15 @@ const CourseDetail = () => {
   }
 
   const categoryColors: Record<string, string> = {
-    html: "bg-orange-100 text-orange-700 dark:bg-orange-900/30 dark:text-orange-400",
-    css: "bg-blue-100 text-blue-700 dark:bg-blue-900/30 dark:text-blue-400",
-    javascript: "bg-yellow-100 text-yellow-700 dark:bg-yellow-900/30 dark:text-yellow-400",
+    html: "bg-gradient-to-r from-orange-500 to-red-500 text-white",
+    css: "bg-gradient-to-r from-blue-500 to-cyan-500 text-white",
+    javascript: "bg-gradient-to-r from-yellow-500 to-amber-500 text-white",
+  };
+
+  const difficultyColors: Record<string, string> = {
+    beginner: "bg-gradient-to-r from-green-500 to-emerald-500 text-white",
+    intermediate: "bg-gradient-to-r from-amber-500 to-orange-500 text-white",
+    advanced: "bg-gradient-to-r from-red-500 to-rose-500 text-white",
   };
 
   return (
@@ -151,10 +164,10 @@ const CourseDetail = () => {
         {/* Course Header */}
         <div className="mb-8">
           <div className="flex flex-wrap gap-2 mb-4">
-            <Badge variant="secondary" className={categoryColors[course.category]}>
+            <Badge className={`${categoryColors[course.category]} border-0 px-3 py-1 font-semibold shadow-sm`}>
               {course.category.toUpperCase()}
             </Badge>
-            <Badge variant="secondary">
+            <Badge className={`${difficultyColors[course.difficulty]} border-0 px-3 py-1 font-semibold shadow-sm`}>
               {course.difficulty}
             </Badge>
           </div>
@@ -188,12 +201,26 @@ const CourseDetail = () => {
                 {completedCount} of {lessons.length} completed
               </span>
             </div>
-            <div className="h-3 bg-muted rounded-full overflow-hidden">
+            <div className="h-3 bg-muted rounded-full overflow-hidden mb-4">
               <div 
                 className="h-full bg-accent rounded-full transition-all duration-500"
                 style={{ width: `${progressPercent}%` }}
               />
             </div>
+            
+            {/* Certificate Button */}
+            {progressPercent === 100 && (
+              <Button 
+                asChild 
+                variant="outline" 
+                className="w-full gap-2 border-accent text-accent hover:bg-accent hover:text-accent-foreground"
+              >
+                <Link to={`/courses/${slug}/certificate`}>
+                  <Award className="w-5 h-5" />
+                  Get Your Certificate
+                </Link>
+              </Button>
+            )}
           </div>
         )}
 
