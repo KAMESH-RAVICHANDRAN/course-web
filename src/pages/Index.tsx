@@ -176,7 +176,8 @@ const Index = () => {
                 <img 
                   src="/aj-logo.png" 
                   alt="AJ STUDIOZ" 
-                  className="h-6 w-auto brightness-0 invert"
+                  className="h-8 w-auto filter drop-shadow-lg"
+                  style={{ filter: 'brightness(0) invert(1)' }}
                 />
                 <span className="text-sm font-semibold">AJ STUDIOZ</span>
               </div>
