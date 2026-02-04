@@ -21,6 +21,7 @@ const Footer = () => {
               <li><Link to="/courses" className="hover:text-accent transition-colors">All Courses</Link></li>
               <li><Link to="/dashboard" className="hover:text-accent transition-colors">Dashboard</Link></li>
               <li><Link to="/about" className="hover:text-accent transition-colors">About Us</Link></li>
+              <li><Link to="/aj-studioz" className="hover:text-accent transition-colors">AJ STUDIOZ</Link></li>
             </ul>
           </div>
           <div>
@@ -46,9 +47,10 @@ const Footer = () => {
             </div>
             <span className="text-lg font-bold font-serif">CodeCraft</span>
           </div>
-          <p className="text-sm text-muted-foreground">
-            © 2025 CodeCraft. Learn to code for free.
-          </p>
+          <div className="text-sm text-muted-foreground text-center md:text-right">
+            <p>© 2025 CodeCraft. Learn to code for free.</p>
+            <p className="text-xs mt-1">Proudly backed by <Link to="/aj-studioz" className="text-accent hover:underline font-semibold">AJ STUDIOZ</Link></p>
+          </div>
         </div>
       </div>
     </footer>
