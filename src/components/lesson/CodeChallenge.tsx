@@ -49,13 +49,14 @@ const CodeChallenge = ({
       if (iframeWindow) {
         (iframeWindow as any).console = {
           log: (...args: any[]) => {
-            capturedOutput += args.join(' ') + '\\n';
+            capturedOutput += args.join(' ') + '\n';
           }
         };
         
         try {
-          // Execute the code
-          iframeWindow.eval(code);
+          // Execute the code using Function constructor (safer than eval)
+          const executeCode = new (iframeWindow as any).Function(code);
+          executeCode();
           setOutput(capturedOutput || 'Code executed successfully (no output)');
           setIsCorrect(null);
         } catch (error: any) {
