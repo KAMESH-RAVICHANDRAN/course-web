@@ -53,7 +53,7 @@ const Footer = () => {
               <p className="text-xs">Proudly backed by</p>
               <Link to="/aj-studioz" className="flex items-center gap-1.5 hover:opacity-80 transition-opacity">
                 <img 
-                  src="/aj-logo.png" 
+                  src="/cc-logo.png" 
                   alt="AJ STUDIOZ" 
                   className="h-5 w-auto"
                 />

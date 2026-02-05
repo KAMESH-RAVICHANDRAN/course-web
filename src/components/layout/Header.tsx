@@ -50,9 +50,11 @@ const Header = () => {
           {/* Logo */}
           <div className="flex items-center min-w-0">
             <Link to="/" className="flex items-center gap-1.5 sm:gap-2">
-              <div className="w-7 h-7 sm:w-8 sm:h-8 bg-primary rounded-lg flex items-center justify-center flex-shrink-0">
-                <Code2 className="w-4 h-4 sm:w-5 sm:h-5 text-primary-foreground" />
-              </div>
+              <img 
+                src="/cc-logo.png" 
+                alt="CodeCraft" 
+                className="w-7 h-7 sm:w-8 sm:h-8 rounded-lg flex-shrink-0"
+              />
               <span className="text-base sm:text-xl font-bold font-serif truncate">CodeCraft</span>
             </Link>
           </div>
