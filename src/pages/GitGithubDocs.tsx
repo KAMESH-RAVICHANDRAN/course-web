@@ -112,10 +112,6 @@ const GitGithubDocs = () => {
             </p>
             <div className="flex flex-wrap items-center justify-center gap-3">
               <Badge variant="outline" className="px-4 py-1">
-                <CheckCircle2 className="h-3 w-3 mr-1" />
-                Production Ready
-              </Badge>
-              <Badge variant="outline" className="px-4 py-1">
                 <Code2 className="h-3 w-3 mr-1" />
                 Hands-on Examples
               </Badge>
