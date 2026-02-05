@@ -42,9 +42,11 @@ const Footer = () => {
         </div>
         <div className="pt-8 border-t border-border flex flex-col md:flex-row items-center justify-between gap-4">
           <div className="flex items-center gap-2">
-            <div className="w-8 h-8 bg-primary rounded-lg flex items-center justify-center">
-              <Code2 className="w-5 h-5 text-primary-foreground" />
-            </div>
+            <img 
+              src="/cc-logo.png" 
+              alt="CodeCraft" 
+              className="w-8 h-8 rounded-lg"
+            />
             <span className="text-lg font-bold font-serif">CodeCraft</span>
           </div>
           <div className="text-sm text-muted-foreground text-center md:text-right">
@@ -53,7 +55,7 @@ const Footer = () => {
               <p className="text-xs">Proudly backed by</p>
               <Link to="/aj-studioz" className="flex items-center gap-1.5 hover:opacity-80 transition-opacity">
                 <img 
-                  src="/cc-logo.png" 
+                  src="/aj-logo.png" 
                   alt="AJ STUDIOZ" 
                   className="h-5 w-auto"
                 />
