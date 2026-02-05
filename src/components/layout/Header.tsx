@@ -75,6 +75,14 @@ const Header = () => {
             >
               Certifications
             </Link>
+            <Link 
+              to="/projects" 
+              className={`text-sm font-medium rounded-full px-4 py-2 transition-all ${
+                isActive('/projects') ? 'bg-muted' : 'hover:bg-muted/60'
+              }`}
+            >
+              Projects
+            </Link>
             {user && (
               <Link 
                 to="/dashboard" 
@@ -185,6 +193,13 @@ const Header = () => {
                 onClick={() => setIsMenuOpen(false)}
               >
                 Certifications
+              </Link>
+              <Link 
+                to="/projects" 
+                className="text-sm font-medium hover:bg-muted/60 rounded-lg px-4 py-3 transition-all"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                Projects
               </Link>
               {user && (
                 <Link 
