@@ -1,57 +1,10 @@
 import { Link } from "react-router-dom";
-import { useState, useRef } from "react";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
-import { Button } from "@/components/ui/button";
-import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from "@/components/ui/dialog";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
-import { Sparkles, Target, Users, Rocket, Award, Code, MessageSquare, Mail, Palette, Download } from "lucide-react";
-import { useToast } from "@/hooks/use-toast";
+import { Sparkles, Target, Users, Rocket, Award, Code, MessageSquare, Mail, Palette } from "lucide-react";
 
 const AJStudioz = () => {
-  const [isLogoModalOpen, setIsLogoModalOpen] = useState(false);
-  const [logoStyle, setLogoStyle] = useState<"codecraft" | "ajstudioz">("codecraft");
-  const [logoText, setLogoText] = useState("");
-  const logoPreviewRef = useRef<HTMLDivElement>(null);
-  const { toast } = useToast();
-
-  const downloadLogo = async () => {
-    if (!logoPreviewRef.current || !logoText.trim()) {
-      toast({
-        title: "Error",
-        description: "Please enter text for your logo",
-        variant: "destructive",
-      });
-      return;
-    }
-
-    try {
-      const html2canvas = (await import('html2canvas')).default;
-      const canvas = await html2canvas(logoPreviewRef.current, {
-        backgroundColor: null,
-        scale: 3,
-      });
-      
-      const link = document.createElement('a');
-      link.download = `${logoText.toLowerCase().replace(/\s+/g, '-')}-logo.png`;
-      link.href = canvas.toDataURL('image/png');
-      link.click();
-      
-      toast({
-        title: "Success!",
-        description: "Your logo has been downloaded",
-      });
-    } catch (error) {
-      toast({
-        title: "Error",
-        description: "Failed to download logo. Please try again.",
-        variant: "destructive",
-      });
-    }
-  };
-
   return (
     <div className="min-h-screen bg-background">
       <Header />
@@ -179,259 +132,80 @@ const AJStudioz = () => {
           </div>
         </section>
 
-        {/* Logo Generator Section */}
-        <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 bg-muted/30">
+        {/* Brand Tools Section */}
+        <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold font-serif mb-4">
-              Brand Logo Generator
+              Brand Resources
             </h2>
             <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-              Create stunning logos with our signature styling - perfect for your projects and branding
+              Access our branding tools and design system
             </p>
           </div>
 
           <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-            <Card 
-              className="cursor-pointer hover:shadow-lg transition-all hover:scale-[1.02]"
-              onClick={() => {
-                setLogoStyle("codecraft");
-                setLogoText("CodeCraft");
-                setIsLogoModalOpen(true);
-              }}
-            >
-              <CardHeader>
-                <div className="flex items-center gap-3">
-                  <div className="p-3 rounded-lg bg-accent/10">
-                    <Palette className="w-6 h-6 text-accent" />
+            {/* Logo Designer Card */}
+            <Link to="/logo-designer">
+              <Card className="cursor-pointer hover:shadow-lg transition-all hover:scale-[1.02] h-full">
+                <CardHeader>
+                  <div className="flex items-center gap-3">
+                    <div className="p-3 rounded-lg bg-accent/10">
+                      <Palette className="w-6 h-6 text-accent" />
+                    </div>
+                    <div>
+                      <CardTitle>Logo Designer</CardTitle>
+                      <CardDescription>Create custom branded logos</CardDescription>
+                    </div>
                   </div>
-                  <div>
-                    <CardTitle className="font-neoda">CodeCraft Style</CardTitle>
-                    <CardDescription>Modern, clean typography</CardDescription>
+                </CardHeader>
+                <CardContent>
+                  <div className="space-y-4">
+                    <p className="text-muted-foreground">
+                      Generate beautiful logos with our signature CodeCraft and AJ STUDIOZ styling. 
+                      Download as high-quality PNG files for your projects.
+                    </p>
+                    <div className="flex gap-2 flex-wrap">
+                      <span className="text-xl font-neoda font-bold">CodeCraft</span>
+                      <span className="text-xl font-neurobyte font-bold">
+                        <span className="text-green-400">AJ</span> <span className="text-red-500">STUDIOZ</span>
+                      </span>
+                    </div>
                   </div>
-                </div>
-              </CardHeader>
-              <CardContent>
-                <div className="bg-background rounded-lg p-8 border border-border">
-                  <div className="text-center">
-                    <span className="text-4xl font-bold font-neoda">CodeCraft</span>
-                  </div>
-                </div>
-                <Button className="w-full mt-4" variant="outline">
-                  <Palette className="w-4 h-4 mr-2" />
-                  Generate Logo
-                </Button>
-              </CardContent>
-            </Card>
+                </CardContent>
+              </Card>
+            </Link>
 
-            <Card 
-              className="cursor-pointer hover:shadow-lg transition-all hover:scale-[1.02]"
-              onClick={() => {
-                setLogoStyle("ajstudioz");
-                setLogoText("AJ STUDIOZ");
-                setIsLogoModalOpen(true);
-              }}
-            >
-              <CardHeader>
-                <div className="flex items-center gap-3">
-                  <div className="p-3 rounded-lg bg-accent/10">
-                    <Sparkles className="w-6 h-6 text-accent" />
+            {/* Color Palette Card */}
+            <Link to="/color-palette">
+              <Card className="cursor-pointer hover:shadow-lg transition-all hover:scale-[1.02] h-full">
+                <CardHeader>
+                  <div className="flex items-center gap-3">
+                    <div className="p-3 rounded-lg bg-accent/10">
+                      <Sparkles className="w-6 h-6 text-accent" />
+                    </div>
+                    <div>
+                      <CardTitle>Design System</CardTitle>
+                      <CardDescription>Colors & typography guide</CardDescription>
+                    </div>
                   </div>
-                  <div>
-                    <CardTitle className="font-neurobyte"><span className="text-green-400">AJ</span> <span className="text-red-500">STUDIOZ</span> Style</CardTitle>
-                    <CardDescription>Bold, futuristic design</CardDescription>
+                </CardHeader>
+                <CardContent>
+                  <div className="space-y-4">
+                    <p className="text-muted-foreground">
+                      Explore our complete color palette and typography system. Copy color codes 
+                      and download fonts for use in your projects.
+                    </p>
+                    <div className="flex gap-2">
+                      <div className="w-10 h-10 rounded-lg bg-green-400" />
+                      <div className="w-10 h-10 rounded-lg bg-red-500" />
+                      <div className="w-10 h-10 rounded-lg bg-[#4d4d3e]" />
+                      <div className="w-10 h-10 rounded-lg bg-[#cc7e6c]" />
+                      <div className="w-10 h-10 rounded-lg bg-[#74b9ff]" />
+                    </div>
                   </div>
-                </div>
-              </CardHeader>
-              <CardContent>
-                <div className="bg-background rounded-lg p-8 border border-border">
-                  <div className="text-center">
-                    <span className="text-4xl font-bold font-neurobyte">
-                      <span className="text-green-400">AJ</span> <span className="text-red-500">STUDIOZ</span>
-                    </span>
-                  </div>
-                </div>
-                <Button className="w-full mt-4" variant="outline">
-                  <Sparkles className="w-4 h-4 mr-2" />
-                  Generate Logo
-                </Button>
-              </CardContent>
-            </Card>
-          </div>
-        </section>
-
-        {/* Implementation Guide Section */}
-        <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold font-serif mb-4">
-              How to Use in Your Application
-            </h2>
-            <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-              Implement our signature logo styles in your project with these simple code snippets
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-2 gap-8">
-            {/* CodeCraft Style Implementation */}
-            <Card>
-              <CardHeader>
-                <CardTitle className="flex items-center gap-2">
-                  <Code className="w-5 h-5" />
-                  <span className="font-neoda">CodeCraft</span> Style - HTML/CSS
-                </CardTitle>
-              </CardHeader>
-              <CardContent className="space-y-4">
-                <div>
-                  <Label className="text-sm font-semibold mb-2 block">1. Add Font to CSS</Label>
-                  <div className="bg-slate-950 text-green-400 p-4 rounded-lg text-sm font-mono overflow-x-auto">
-                    <pre>{`@font-face {
-  font-family: 'Neoda';
-  src: url('/fonts/neoda.otf') format('opentype');
-  font-weight: normal;
-  font-style: normal;
-}`}</pre>
-                  </div>
-                </div>
-
-                <div>
-                  <Label className="text-sm font-semibold mb-2 block">2. HTML Structure</Label>
-                  <div className="bg-slate-950 text-green-400 p-4 rounded-lg text-sm font-mono overflow-x-auto">
-                    <pre>{`<span class="codecraft-logo">
-  CodeCraft
-</span>`}</pre>
-                  </div>
-                </div>
-
-                <div>
-                  <Label className="text-sm font-semibold mb-2 block">3. CSS Styling</Label>
-                  <div className="bg-slate-950 text-green-400 p-4 rounded-lg text-sm font-mono overflow-x-auto">
-                    <pre>{`.codecraft-logo {
-  font-family: 'Neoda', sans-serif;
-  font-weight: bold;
-  font-size: 2rem;
-}`}</pre>
-                  </div>
-                </div>
-
-                <div>
-                  <Label className="text-sm font-semibold mb-2 block">React/JSX Example</Label>
-                  <div className="bg-slate-950 text-green-400 p-4 rounded-lg text-sm font-mono overflow-x-auto">
-                    <pre>{`<span className="font-neoda font-bold text-4xl">
-  CodeCraft
-</span>`}</pre>
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
-
-            {/* AJ STUDIOZ Style Implementation */}
-            <Card>
-              <CardHeader>
-                <CardTitle className="flex items-center gap-2">
-                  <Sparkles className="w-5 h-5" />
-                  <span className="font-neurobyte"><span className="text-green-400">AJ</span> <span className="text-red-500">STUDIOZ</span></span> Style - HTML/CSS
-                </CardTitle>
-              </CardHeader>
-              <CardContent className="space-y-4">
-                <div>
-                  <Label className="text-sm font-semibold mb-2 block">1. Add Font to CSS</Label>
-                  <div className="bg-slate-950 text-green-400 p-4 rounded-lg text-sm font-mono overflow-x-auto">
-                    <pre>{`@font-face {
-  font-family: 'Neurobyte';
-  src: url('/fonts/Neurobyte.otf') format('opentype');
-  font-weight: normal;
-  font-style: normal;
-}`}</pre>
-                  </div>
-                </div>
-
-                <div>
-                  <Label className="text-sm font-semibold mb-2 block">2. HTML Structure</Label>
-                  <div className="bg-slate-950 text-green-400 p-4 rounded-lg text-sm font-mono overflow-x-auto">
-                    <pre>{`<span class="ajstudioz-logo">
-  <span class="aj-text">AJ</span>
-  <span class="studioz-text">STUDIOZ</span>
-</span>`}</pre>
-                  </div>
-                </div>
-
-                <div>
-                  <Label className="text-sm font-semibold mb-2 block">3. CSS Styling</Label>
-                  <div className="bg-slate-950 text-green-400 p-4 rounded-lg text-sm font-mono overflow-x-auto">
-                    <pre>{`.ajstudioz-logo {
-  font-family: 'Neurobyte', sans-serif;
-  font-weight: bold;
-  font-size: 2rem;
-}
-.aj-text { color: #4ade80; } /* green-400 */
-.studioz-text { color: #ef4444; } /* red-500 */`}</pre>
-                  </div>
-                </div>
-
-                <div>
-                  <Label className="text-sm font-semibold mb-2 block">React/JSX Example</Label>
-                  <div className="bg-slate-950 text-green-400 p-4 rounded-lg text-sm font-mono overflow-x-auto">
-                    <pre>{`<span className="font-neurobyte font-bold text-4xl">
-  <span className="text-green-400">AJ</span>{' '}
-  <span className="text-red-500">STUDIOZ</span>
-</span>`}</pre>
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
-          </div>
-
-          {/* Download Fonts Section */}
-          <div className="mt-12 max-w-4xl mx-auto">
-            <Card className="bg-accent/5 border-accent/20">
-              <CardHeader>
-                <CardTitle className="flex items-center gap-2">
-                  <Download className="w-5 h-5" />
-                  Download Font Files
-                </CardTitle>
-                <CardDescription>
-                  Get the font files needed to implement these styles in your application
-                </CardDescription>
-              </CardHeader>
-              <CardContent>
-                <div className="flex flex-wrap gap-4">
-                  <Button 
-                    variant="outline"
-                    onClick={() => {
-                      const link = document.createElement('a');
-                      link.href = '/fonts/neoda.otf';
-                      link.download = 'neoda.otf';
-                      link.click();
-                      toast({
-                        title: "Download Started",
-                        description: "Neoda font is downloading",
-                      });
-                    }}
-                  >
-                    <Download className="w-4 h-4 mr-2" />
-                    Download Neoda Font
-                  </Button>
-                  <Button 
-                    variant="outline"
-                    onClick={() => {
-                      const link = document.createElement('a');
-                      link.href = '/fonts/Neurobyte.otf';
-                      link.download = 'Neurobyte.otf';
-                      link.click();
-                      toast({
-                        title: "Download Started",
-                        description: "Neurobyte font is downloading",
-                      });
-                    }}
-                  >
-                    <Download className="w-4 h-4 mr-2" />
-                    Download Neurobyte Font
-                  </Button>
-                </div>
-                <p className="text-sm text-muted-foreground mt-4">
-                  Note: Place font files in your project's public/fonts directory for web applications
-                </p>
-              </CardContent>
-            </Card>
+                </CardContent>
+              </Card>
+            </Link>
           </div>
         </section>
 
@@ -554,75 +328,6 @@ const AJStudioz = () => {
       </main>
 
       <Footer />
-
-      {/* Logo Generator Modal */}
-      <Dialog open={isLogoModalOpen} onOpenChange={setIsLogoModalOpen}>
-        <DialogContent className="sm:max-w-[600px]">
-          <DialogHeader>
-            <DialogTitle className="text-2xl">Generate Your Logo</DialogTitle>
-            <DialogDescription>
-              Customize your logo text and download it as a high-quality PNG
-            </DialogDescription>
-          </DialogHeader>
-          
-          <div className="space-y-6 py-4">
-            <div className="space-y-2">
-              <Label htmlFor="logoText">Logo Text</Label>
-              <Input
-                id="logoText"
-                value={logoText}
-                onChange={(e) => setLogoText(e.target.value)}
-                placeholder="Enter your text"
-                className="text-lg"
-              />
-            </div>
-
-            <div className="space-y-2">
-              <Label>Preview</Label>
-              <div 
-                ref={logoPreviewRef}
-                className="bg-gradient-to-br from-background to-muted/30 rounded-xl p-12 border-2 border-dashed border-border flex items-center justify-center min-h-[200px]"
-              >
-                {logoText ? (
-                  logoStyle === "codecraft" ? (
-                    <span className="text-5xl md:text-6xl font-bold font-neoda text-center break-words max-w-full">
-                      {logoText}
-                    </span>
-                  ) : (
-                    <span className="text-5xl md:text-6xl font-bold font-neurobyte text-center break-words max-w-full">
-                      {logoText.split(' ').slice(0, 1).map((word, i) => (
-                        <span key={i} className="text-green-400">{word}</span>
-                      ))}{' '}
-                      {logoText.split(' ').slice(1).map((word, i) => (
-                        <span key={i} className="text-red-500">{word} </span>
-                      ))}
-                    </span>
-                  )
-                ) : (
-                  <p className="text-muted-foreground">Your logo will appear here</p>
-                )}
-              </div>
-            </div>
-
-            <div className="flex gap-3">
-              <Button 
-                onClick={downloadLogo}
-                className="flex-1"
-                disabled={!logoText.trim()}
-              >
-                <Download className="w-4 h-4 mr-2" />
-                Download PNG
-              </Button>
-              <Button 
-                onClick={() => setIsLogoModalOpen(false)}
-                variant="outline"
-              >
-                Close
-              </Button>
-            </div>
-          </div>
-        </DialogContent>
-      </Dialog>
     </div>
   );
 };
