@@ -113,7 +113,7 @@ const Header = () => {
             </Link>
             <Link 
               to="/aj-studioz" 
-              className={`text-sm font-medium rounded-full px-4 py-2 transition-all font-neurobyte ${
+              className={`text-sm font-medium rounded-full px-4 py-2 transition-all ${
                 isActive('/aj-studioz') ? 'bg-muted' : 'hover:bg-muted/60'
               }`}
             >
@@ -228,7 +228,7 @@ const Header = () => {
               </Link>
               <Link 
                 to="/aj-studioz" 
-                className="text-sm font-medium hover:bg-muted/60 rounded-lg px-4 py-3 transition-all font-neurobyte"
+                className="text-sm font-medium hover:bg-muted/60 rounded-lg px-4 py-3 transition-all"
                 onClick={() => setIsMenuOpen(false)}
               >
                 AJ STUDIOZ
