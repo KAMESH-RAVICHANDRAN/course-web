@@ -620,26 +620,41 @@ const GithubEducation = () => {
                     Learn to code and ship software like a pro with real-world tools used by millions of developers.
                   </p>
                   
-                  <div className="grid sm:grid-cols-2 gap-4 mt-6">
+                  <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 mt-6">
                     {benefits.map((benefit, index) => (
-                      <Card key={index} className="border-2">
-                        <CardHeader className="pb-3">
-                          <div className="flex items-start justify-between">
-                            <div className="flex items-center gap-3">
-                              <div className="p-2 bg-primary/10 rounded-lg">
-                                <benefit.icon className="h-5 w-5 text-primary" />
-                              </div>
-                              <div>
-                                <CardTitle className="text-base">{benefit.title}</CardTitle>
-                                <Badge variant="secondary" className="mt-1">{benefit.value}</Badge>
-                              </div>
-                            </div>
+                      <div
+                        key={index}
+                        className="relative block no-underline cursor-pointer group transition-all duration-300 overflow-hidden bg-accent border border-border hover:border-muted"
+                        style={{
+                          borderRadius: '30px',
+                          padding: '6px'
+                        }}
+                      >
+                        <div className="px-4 pt-3 pb-3 relative">
+                          <div className="text-foreground text-base font-medium leading-tight mb-1 group-hover:text-primary transition-colors duration-300 line-clamp-1">
+                            {benefit.title}
                           </div>
-                        </CardHeader>
-                        <CardContent className="text-sm text-muted-foreground">
-                          {benefit.description}
-                        </CardContent>
-                      </Card>
+                          <div className="text-muted-foreground font-normal text-xs line-clamp-1">
+                            {benefit.value}
+                          </div>
+                        </div>
+
+                        <div
+                          className="h-[200px] overflow-hidden relative bg-background"
+                          style={{
+                            borderRadius: '24px'
+                          }}
+                        >
+                          <div className="w-full h-full flex flex-col items-center justify-center gap-3 p-4">
+                            <div className="p-3 bg-primary/10 rounded-lg">
+                              <benefit.icon className="h-8 w-8 text-primary" />
+                            </div>
+                            <p className="text-sm text-muted-foreground text-center">
+                              {benefit.description}
+                            </p>
+                          </div>
+                        </div>
+                      </div>
                     ))}
                   </div>
 
@@ -996,43 +1011,65 @@ const GithubEducation = () => {
                   <Separator className="my-6" />
 
                   {/* Benefits Cards Grid */}
-                  <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+                  <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
                     {filteredOffers.map((offer, index) => (
-                      <Card key={index} className="hover:border-primary/50 transition-all hover:shadow-md">
-                        <CardHeader className="pb-3">
-                          <div className="flex items-start justify-between gap-2 mb-2">
-                            <div className="p-2 bg-primary/10 rounded-lg">
-                              <offer.icon className="h-5 w-5 text-primary" />
+                      <div
+                        key={index}
+                        className="relative block no-underline cursor-pointer group transition-all duration-300 overflow-hidden bg-accent border border-border hover:border-muted"
+                        style={{
+                          borderRadius: '30px',
+                          padding: '6px'
+                        }}
+                      >
+                        <div className="px-4 pt-3 pb-3 relative">
+                          <div className="text-foreground text-base font-medium leading-tight mb-1 group-hover:text-primary transition-colors duration-300 line-clamp-1">
+                            {offer.name}
+                          </div>
+                          <div className="text-muted-foreground font-normal text-xs line-clamp-1">
+                            {offer.category}
+                          </div>
+                        </div>
+
+                        <div
+                          className="h-[200px] overflow-hidden relative bg-background"
+                          style={{
+                            borderRadius: '24px'
+                          }}
+                        >
+                          <div className="w-full h-full flex flex-col justify-between p-4">
+                            <div className="space-y-2">
+                              <div className="flex items-center justify-center p-3 bg-primary/10 rounded-lg w-fit">
+                                <offer.icon className="h-6 w-6 text-primary" />
+                              </div>
+                              
+                              <p className="text-xs text-muted-foreground line-clamp-2">
+                                {offer.description}
+                              </p>
                             </div>
-                            <Badge variant="secondary" className="text-xs">
-                              {offer.category}
-                            </Badge>
+                            
+                            <div className="space-y-2">
+                              <div className="bg-green-500/10 rounded-lg p-2 border border-green-500/20">
+                                <p className="text-xs font-medium text-green-700 dark:text-green-400">
+                                  🎁 {offer.offer}
+                                </p>
+                              </div>
+                              
+                              <div className="flex flex-wrap gap-1">
+                                {offer.tags.slice(0, 2).map((tag, tagIndex) => (
+                                  <Badge key={tagIndex} variant="outline" className="text-xs">
+                                    {tag}
+                                  </Badge>
+                                ))}
+                                {offer.tags.length > 2 && (
+                                  <Badge variant="outline" className="text-xs">
+                                    +{offer.tags.length - 2}
+                                  </Badge>
+                                )}
+                              </div>
+                            </div>
                           </div>
-                          <CardTitle className="text-base line-clamp-1">{offer.name}</CardTitle>
-                        </CardHeader>
-                        <CardContent className="space-y-3">
-                          <p className="text-xs text-muted-foreground line-clamp-2">
-                            {offer.description}
-                          </p>
-                          <div className="bg-green-500/10 rounded-lg p-3 border border-green-500/20">
-                            <p className="text-xs font-medium text-green-700 dark:text-green-400">
-                              🎁 {offer.offer}
-                            </p>
-                          </div>
-                          <div className="flex flex-wrap gap-1">
-                            {offer.tags.slice(0, 2).map((tag, tagIndex) => (
-                              <Badge key={tagIndex} variant="outline" className="text-xs">
-                                {tag}
-                              </Badge>
-                            ))}
-                            {offer.tags.length > 2 && (
-                              <Badge variant="outline" className="text-xs">
-                                +{offer.tags.length - 2}
-                              </Badge>
-                            )}
-                          </div>
-                        </CardContent>
-                      </Card>
+                        </div>
+                      </div>
                     ))}
                   </div>
 
