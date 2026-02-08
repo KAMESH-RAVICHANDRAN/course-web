@@ -16,6 +16,8 @@ import Contact from "./pages/Contact";
 import AJStudioz from "./pages/AJStudioz";
 import LogoDesigner from "./pages/LogoDesigner";
 import ColorPalette from "./pages/ColorPalette";
+import Typography from "./pages/Typography";
+import ComingSoon from "./pages/ComingSoon";
 import Privacy from "./pages/Privacy";
 import Terms from "./pages/Terms";
 import NotFound from "./pages/NotFound";
@@ -46,6 +48,8 @@ const App = () => (
             <Route path="/aj-studioz" element={<AJStudioz />} />
             <Route path="/logo-designer" element={<LogoDesigner />} />
             <Route path="/color-palette" element={<ColorPalette />} />
+            <Route path="/typography" element={<Typography />} />
+            <Route path="/coming-soon" element={<ComingSoon />} />
             <Route path="/privacy" element={<Privacy />} />
             <Route path="/terms" element={<Terms />} />
             <Route path="/git-github" element={<GitGithubDocs />} />

@@ -144,45 +144,141 @@ const AJStudioz = () => {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
-            <div className="p-6 rounded-xl border border-border bg-card hover:shadow-lg transition-all">
-              <div className="mb-4">
-                <span className="px-3 py-1 bg-purple-100 text-purple-800 dark:bg-purple-900 dark:text-purple-300 text-xs font-medium rounded-full">Design Tool</span>
-              </div>
-              <h3 className="text-xl font-semibold mb-3">Logo Designer</h3>
-              <p className="text-muted-foreground mb-4">
-                Generate beautiful logos with our signature CodeCraft and <span className="font-neurobyte"><span className="text-green-400">AJ</span> <span className="text-red-500">STUDIOZ</span></span> styling. Download as high-quality PNG files.
-              </p>
-              <Link to="/logo-designer" className="text-foreground hover:text-muted-foreground font-medium flex items-center gap-2">
-                Create Logo →
-              </Link>
-            </div>
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+            {/* Logo Designer Card */}
+            <Link to="/logo-designer" className="block no-underline">
+              <div
+                className="relative block no-underline cursor-pointer group transition-all duration-300 overflow-hidden bg-accent border border-border hover:border-muted"
+                style={{
+                  borderRadius: '30px',
+                  padding: '6px'
+                }}
+              >
+                <div className="px-4 pt-3 pb-3 relative">
+                  <div className="text-foreground text-lg font-medium leading-tight mb-1 group-hover:text-primary transition-colors duration-300 line-clamp-1">
+                    Logo Designer
+                  </div>
+                  <div className="text-muted-foreground font-normal text-xs line-clamp-1">
+                    Design Tool
+                  </div>
+                </div>
 
-            <div className="p-6 rounded-xl border border-border bg-card hover:shadow-lg transition-all">
-              <div className="mb-4">
-                <span className="px-3 py-1 bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-300 text-xs font-medium rounded-full">Design System</span>
+                <div
+                  className="h-[200px] overflow-hidden relative bg-background"
+                  style={{
+                    borderRadius: '24px'
+                  }}
+                >
+                  <div className="w-full h-full flex flex-col items-center justify-center gap-4 p-6">
+                    <span className="text-4xl font-neoda font-bold">CodeCraft</span>
+                    <span className="text-4xl font-neurobyte font-bold">
+                      <span className="text-green-400">AJ</span> <span className="text-red-500">STUDIOZ</span>
+                    </span>
+                  </div>
+                </div>
               </div>
-              <h3 className="text-xl font-semibold mb-3">Color Palette</h3>
-              <p className="text-muted-foreground mb-4">
-                Explore our complete color palette with brand colors, theme shades, and accent colors. Copy color codes instantly.
-              </p>
-              <Link to="/color-palette" className="text-foreground hover:text-muted-foreground font-medium flex items-center gap-2">
-                View Colors →
-              </Link>
-            </div>
+            </Link>
 
-            <div className="p-6 rounded-xl border border-border bg-card hover:shadow-lg transition-all">
-              <div className="mb-4">
-                <span className="px-3 py-1 bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-300 text-xs font-medium rounded-full">Typography</span>
+            {/* Color Palette Card */}
+            <Link to="/color-palette" className="block no-underline">
+              <div
+                className="relative block no-underline cursor-pointer group transition-all duration-300 overflow-hidden bg-accent border border-border hover:border-muted"
+                style={{
+                  borderRadius: '30px',
+                  padding: '6px'
+                }}
+              >
+                <div className="px-4 pt-3 pb-3 relative">
+                  <div className="text-foreground text-lg font-medium leading-tight mb-1 group-hover:text-primary transition-colors duration-300 line-clamp-1">
+                    Color Palette
+                  </div>
+                  <div className="text-muted-foreground font-normal text-xs line-clamp-1">
+                    Design System
+                  </div>
+                </div>
+
+                <div
+                  className="h-[200px] overflow-hidden relative bg-background"
+                  style={{
+                    borderRadius: '24px'
+                  }}
+                >
+                  <div className="w-full h-full flex items-center justify-center gap-3 p-6 flex-wrap">
+                    <div className="w-16 h-16 rounded-lg bg-green-400" />
+                    <div className="w-16 h-16 rounded-lg bg-red-500" />
+                    <div className="w-16 h-16 rounded-lg bg-[#4d4d3e]" />
+                    <div className="w-16 h-16 rounded-lg bg-[#cc7e6c]" />
+                    <div className="w-16 h-16 rounded-lg bg-[#74b9ff]" />
+                    <div className="w-16 h-16 rounded-lg bg-[#ebdb8c]" />
+                  </div>
+                </div>
               </div>
-              <h3 className="text-xl font-semibold mb-3">Font Library</h3>
-              <p className="text-muted-foreground mb-4">
-                Access our custom fonts including Neurobyte and Neoda. Download font files and view typography samples.
-              </p>
-              <Link to="/color-palette" className="text-foreground hover:text-muted-foreground font-medium flex items-center gap-2">
-                View Fonts →
-              </Link>
-            </div>
+            </Link>
+
+            {/* Font Library Card */}
+            <Link to="/typography" className="block no-underline">
+              <div
+                className="relative block no-underline cursor-pointer group transition-all duration-300 overflow-hidden bg-accent border border-border hover:border-muted"
+                style={{
+                  borderRadius: '30px',
+                  padding: '6px'
+                }}
+              >
+                <div className="px-4 pt-3 pb-3 relative">
+                  <div className="text-foreground text-lg font-medium leading-tight mb-1 group-hover:text-primary transition-colors duration-300 line-clamp-1">
+                    Font Library
+                  </div>
+                  <div className="text-muted-foreground font-normal text-xs line-clamp-1">
+                    Typography
+                  </div>
+                </div>
+
+                <div
+                  className="h-[200px] overflow-hidden relative bg-background"
+                  style={{
+                    borderRadius: '24px'
+                  }}
+                >
+                  <div className="w-full h-full flex flex-col items-center justify-center gap-4 p-6">
+                    <span className="text-3xl font-neoda">Aa Bb Cc</span>
+                    <span className="text-3xl font-neurobyte">Aa Bb Cc</span>
+                    <span className="text-2xl font-serif">Aa Bb Cc</span>
+                  </div>
+                </div>
+              </div>
+            </Link>
+
+            {/* AJ STUDIOZ Starter Template Card */}
+            <Link to="/coming-soon" className="block no-underline">
+              <div
+                className="relative block no-underline cursor-pointer group transition-all duration-300 overflow-hidden bg-accent border border-border hover:border-muted"
+                style={{
+                  borderRadius: '30px',
+                  padding: '6px'
+                }}
+              >
+                <div className="px-4 pt-3 pb-3 relative">
+                  <div className="text-foreground text-lg font-medium leading-tight mb-1 group-hover:text-primary transition-colors duration-300 line-clamp-1">
+                    Starter Template
+                  </div>
+                  <div className="text-muted-foreground font-normal text-xs line-clamp-1">
+                    Project Boilerplate
+                  </div>
+                </div>
+
+                <div
+                  className="h-[200px] overflow-hidden relative bg-background"
+                  style={{
+                    borderRadius: '24px'
+                  }}
+                >
+                  <div className="w-full h-full flex flex-col items-center justify-center gap-3 p-6">
+                    <span className="text-6xl">🚀</span>
+                    <span className="text-sm font-semibold text-muted-foreground">Coming Soon</span>
+                  </div>
+                </div>
+              </div>
+            </Link>
           </div>
         </section>
 

@@ -54,13 +54,6 @@ const ColorPalette = () => {
     { name: "Error Crimson", hex: "#ff6b6b", class: "bg-[#ff6b6b]" },
   ];
 
-  const typography = [
-    { name: "CodeCraft", font: "font-neoda", sample: "CodeCraft", file: "Neoda" },
-    { name: "AJ STUDIOZ", font: "font-neurobyte", sample: "AJ STUDIOZ", file: "Neurobyte", color: true },
-    { name: "Headings", font: "font-serif", sample: "The quick brown fox", file: "System Serif" },
-    { name: "Body Text", font: "font-sans", sample: "The quick brown fox jumps over the lazy dog", file: "System Sans-serif" },
-  ];
-
   return (
     <div className="min-h-screen bg-background">
       <Header />
@@ -87,28 +80,28 @@ const ColorPalette = () => {
         {/* Brand Colors */}
         <section className="mb-12">
           <h2 className="text-3xl font-bold font-serif mb-6">Brand Colors</h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {brandColors.map((color) => (
-              <Card 
+              <div
                 key={color.name}
-                className="cursor-pointer hover:shadow-lg transition-all"
+                className="relative cursor-pointer group transition-all duration-300 overflow-hidden bg-accent border border-border hover:border-muted rounded-[20px]"
                 onClick={() => copyToClipboard(color.hex, color.name)}
               >
-                <div className={`h-32 rounded-t-xl ${color.class}`} />
-                <CardContent className="pt-4">
+                <div className={`h-32 ${color.class} transition-all duration-300 group-hover:scale-105`} />
+                <div className="bg-background px-4 py-3">
                   <div className="flex items-center justify-between">
                     <div>
-                      <p className="font-semibold">{color.name}</p>
-                      <p className="text-sm text-muted-foreground font-mono">{color.hex}</p>
+                      <p className="font-semibold text-foreground">{color.name}</p>
+                      <p className="text-xs text-muted-foreground font-mono">{color.hex}</p>
                     </div>
                     {copiedColor === color.hex ? (
-                      <Check className="w-5 h-5 text-green-500" />
+                      <Check className="w-4 h-4 text-green-500" />
                     ) : (
-                      <Copy className="w-5 h-5 text-muted-foreground" />
+                      <Copy className="w-4 h-4 text-muted-foreground" />
                     )}
                   </div>
-                </CardContent>
-              </Card>
+                </div>
+              </div>
             ))}
           </div>
         </section>
@@ -120,28 +113,28 @@ const ColorPalette = () => {
           {/* Dark Shades */}
           <div className="mb-8">
             <h3 className="text-xl font-semibold mb-4">Dark Shades</h3>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
               {themeColors.filter(c => c.group === "dark").map((color) => (
-                <Card 
+                <div
                   key={color.name}
-                  className="cursor-pointer hover:shadow-lg transition-all"
+                  className="relative cursor-pointer group transition-all duration-300 overflow-hidden bg-accent border border-border hover:border-muted rounded-[20px]"
                   onClick={() => copyToClipboard(color.hex, color.name)}
                 >
-                  <div className={`h-32 rounded-t-xl ${color.class}`} />
-                  <CardContent className="pt-4">
+                  <div className={`h-32 ${color.class} transition-all duration-300 group-hover:scale-105`} />
+                  <div className="bg-background px-4 py-3">
                     <div className="flex items-center justify-between">
                       <div>
-                        <p className="font-semibold">{color.name}</p>
-                        <p className="text-sm text-muted-foreground font-mono">{color.hex}</p>
+                        <p className="font-semibold text-foreground">{color.name}</p>
+                        <p className="text-xs text-muted-foreground font-mono">{color.hex}</p>
                       </div>
                       {copiedColor === color.hex ? (
-                        <Check className="w-5 h-5 text-green-500" />
+                        <Check className="w-4 h-4 text-green-500" />
                       ) : (
-                        <Copy className="w-5 h-5 text-muted-foreground" />
+                        <Copy className="w-4 h-4 text-muted-foreground" />
                       )}
                     </div>
-                  </CardContent>
-                </Card>
+                  </div>
+                </div>
               ))}
             </div>
           </div>
@@ -149,28 +142,28 @@ const ColorPalette = () => {
           {/* Gray Shades */}
           <div className="mb-8">
             <h3 className="text-xl font-semibold mb-4">Gray Shades</h3>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
               {themeColors.filter(c => c.group === "gray").map((color) => (
-                <Card 
+                <div
                   key={color.name}
-                  className="cursor-pointer hover:shadow-lg transition-all"
+                  className="relative cursor-pointer group transition-all duration-300 overflow-hidden bg-accent border border-border hover:border-muted rounded-[20px]"
                   onClick={() => copyToClipboard(color.hex, color.name)}
                 >
-                  <div className={`h-32 rounded-t-xl ${color.class}`} />
-                  <CardContent className="pt-4">
+                  <div className={`h-32 ${color.class} transition-all duration-300 group-hover:scale-105`} />
+                  <div className="bg-background px-4 py-3">
                     <div className="flex items-center justify-between">
                       <div>
-                        <p className="font-semibold">{color.name}</p>
-                        <p className="text-sm text-muted-foreground font-mono">{color.hex}</p>
+                        <p className="font-semibold text-foreground">{color.name}</p>
+                        <p className="text-xs text-muted-foreground font-mono">{color.hex}</p>
                       </div>
                       {copiedColor === color.hex ? (
-                        <Check className="w-5 h-5 text-green-500" />
+                        <Check className="w-4 h-4 text-green-500" />
                       ) : (
-                        <Copy className="w-5 h-5 text-muted-foreground" />
+                        <Copy className="w-4 h-4 text-muted-foreground" />
                       )}
                     </div>
-                  </CardContent>
-                </Card>
+                  </div>
+                </div>
               ))}
             </div>
           </div>
@@ -178,28 +171,28 @@ const ColorPalette = () => {
           {/* Light Shades */}
           <div className="mb-8">
             <h3 className="text-xl font-semibold mb-4">Light Shades</h3>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
               {themeColors.filter(c => c.group === "light").map((color) => (
-                <Card 
+                <div
                   key={color.name}
-                  className="cursor-pointer hover:shadow-lg transition-all border-2"
+                  className="relative cursor-pointer group transition-all duration-300 overflow-hidden bg-accent border-2 border-border hover:border-muted rounded-[20px]"
                   onClick={() => copyToClipboard(color.hex, color.name)}
                 >
-                  <div className={`h-32 rounded-t-xl ${color.class}`} />
-                  <CardContent className="pt-4">
+                  <div className={`h-32 ${color.class} transition-all duration-300 group-hover:scale-105`} />
+                  <div className="bg-background px-4 py-3">
                     <div className="flex items-center justify-between">
                       <div>
-                        <p className="font-semibold">{color.name}</p>
-                        <p className="text-sm text-muted-foreground font-mono">{color.hex}</p>
+                        <p className="font-semibold text-foreground">{color.name}</p>
+                        <p className="text-xs text-muted-foreground font-mono">{color.hex}</p>
                       </div>
                       {copiedColor === color.hex ? (
-                        <Check className="w-5 h-5 text-green-500" />
+                        <Check className="w-4 h-4 text-green-500" />
                       ) : (
-                        <Copy className="w-5 h-5 text-muted-foreground" />
+                        <Copy className="w-4 h-4 text-muted-foreground" />
                       )}
                     </div>
-                  </CardContent>
-                </Card>
+                  </div>
+                </div>
               ))}
             </div>
           </div>
@@ -207,28 +200,28 @@ const ColorPalette = () => {
           {/* Warm Tones */}
           <div className="mb-8">
             <h3 className="text-xl font-semibold mb-4">Warm Tones</h3>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
               {themeColors.filter(c => c.group === "warm").map((color) => (
-                <Card 
+                <div
                   key={color.name}
-                  className="cursor-pointer hover:shadow-lg transition-all"
+                  className="relative cursor-pointer group transition-all duration-300 overflow-hidden bg-accent border border-border hover:border-muted rounded-[20px]"
                   onClick={() => copyToClipboard(color.hex, color.name)}
                 >
-                  <div className={`h-32 rounded-t-xl ${color.class}`} />
-                  <CardContent className="pt-4">
+                  <div className={`h-32 ${color.class} transition-all duration-300 group-hover:scale-105`} />
+                  <div className="bg-background px-4 py-3">
                     <div className="flex items-center justify-between">
                       <div>
-                        <p className="font-semibold">{color.name}</p>
-                        <p className="text-sm text-muted-foreground font-mono">{color.hex}</p>
+                        <p className="font-semibold text-foreground">{color.name}</p>
+                        <p className="text-xs text-muted-foreground font-mono">{color.hex}</p>
                       </div>
                       {copiedColor === color.hex ? (
-                        <Check className="w-5 h-5 text-green-500" />
+                        <Check className="w-4 h-4 text-green-500" />
                       ) : (
-                        <Copy className="w-5 h-5 text-muted-foreground" />
+                        <Copy className="w-4 h-4 text-muted-foreground" />
                       )}
                     </div>
-                  </CardContent>
-                </Card>
+                  </div>
+                </div>
               ))}
             </div>
           </div>
@@ -236,64 +229,30 @@ const ColorPalette = () => {
           {/* Accent Colors */}
           <div className="mb-8">
             <h3 className="text-xl font-semibold mb-4">Accent Colors</h3>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
               {accentColors.map((color) => (
-                <Card 
+                <div
                   key={color.name}
-                  className="cursor-pointer hover:shadow-lg transition-all"
+                  className="relative cursor-pointer group transition-all duration-300 overflow-hidden bg-accent border border-border hover:border-muted rounded-[20px]"
                   onClick={() => copyToClipboard(color.hex, color.name)}
                 >
-                  <div className={`h-32 rounded-t-xl ${color.class}`} />
-                  <CardContent className="pt-4">
+                  <div className={`h-32 ${color.class} transition-all duration-300 group-hover:scale-105`} />
+                  <div className="bg-background px-4 py-3">
                     <div className="flex items-center justify-between">
                       <div>
-                        <p className="font-semibold">{color.name}</p>
-                        <p className="text-sm text-muted-foreground font-mono">{color.hex}</p>
+                        <p className="font-semibold text-foreground">{color.name}</p>
+                        <p className="text-xs text-muted-foreground font-mono">{color.hex}</p>
                       </div>
                       {copiedColor === color.hex ? (
-                        <Check className="w-5 h-5 text-green-500" />
+                        <Check className="w-4 h-4 text-green-500" />
                       ) : (
-                        <Copy className="w-5 h-5 text-muted-foreground" />
+                        <Copy className="w-4 h-4 text-muted-foreground" />
                       )}
                     </div>
-                  </CardContent>
-                </Card>
+                  </div>
+                </div>
               ))}
             </div>
-          </div>
-        </section>
-
-        {/* Typography */}
-        <section className="mb-12">
-          <h2 className="text-3xl font-bold font-serif mb-6">Typography</h2>
-          <div className="space-y-6">
-            {typography.map((type) => (
-              <Card key={type.name}>
-                <CardHeader>
-                  <CardTitle className="flex items-center justify-between">
-                    <span>{type.name}</span>
-                    <span className="text-sm text-muted-foreground font-normal">{type.file}</span>
-                  </CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <div className={`text-4xl ${type.font} font-bold`}>
-                    {type.color ? (
-                      <>
-                        <span className="text-green-400">AJ</span> <span className="text-red-500">STUDIOZ</span>
-                      </>
-                    ) : (
-                      type.sample
-                    )}
-                  </div>
-                  <div className="mt-4 grid grid-cols-2 md:grid-cols-4 gap-4 text-sm text-muted-foreground">
-                    <div className={`${type.font} text-base`}>Aa Bb Cc</div>
-                    <div className={`${type.font} text-lg`}>0123456789</div>
-                    <div className={`${type.font}`}>!@#$%^&*()</div>
-                    <div className={`${type.font}`}>Regular • Bold</div>
-                  </div>
-                </CardContent>
-              </Card>
-            ))}
           </div>
         </section>
       </main>

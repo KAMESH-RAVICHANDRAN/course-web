@@ -74,66 +74,76 @@ const LogoDesigner = () => {
         </div>
 
         {/* Style Selection Cards */}
-        <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto mb-12">
-          <Card 
-            className={`cursor-pointer transition-all hover:scale-[1.02] ${
-              logoStyle === "codecraft" ? "ring-2 ring-accent" : ""
+        <div className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto mb-12">
+          <div
+            className={`relative block no-underline cursor-pointer group transition-all duration-300 overflow-hidden bg-accent border border-border hover:border-muted ${
+              logoStyle === "codecraft" ? "ring-2 ring-primary" : ""
             }`}
+            style={{
+              borderRadius: '30px',
+              padding: '6px'
+            }}
             onClick={() => {
               setLogoStyle("codecraft");
               setLogoText("CodeCraft");
             }}
           >
-            <CardHeader>
-              <div className="flex items-center gap-3">
-                <div className="p-3 rounded-lg bg-accent/10">
-                  <Palette className="w-6 h-6 text-accent" />
-                </div>
-                <div>
-                  <CardTitle className="font-neoda">CodeCraft Style</CardTitle>
-                  <CardDescription>Modern, clean typography</CardDescription>
-                </div>
+            <div className="px-4 pt-3 pb-3 relative">
+              <div className="text-foreground text-lg font-medium leading-tight mb-1 group-hover:text-primary transition-colors duration-300 line-clamp-1">
+                CodeCraft Style
               </div>
-            </CardHeader>
-            <CardContent>
-              <div className="bg-background rounded-lg p-8 border border-border">
-                <div className="text-center">
-                  <span className="text-4xl font-bold font-neoda">CodeCraft</span>
-                </div>
+              <div className="text-muted-foreground font-normal text-xs line-clamp-1">
+                Modern, clean typography
               </div>
-            </CardContent>
-          </Card>
+            </div>
 
-          <Card 
-            className={`cursor-pointer transition-all hover:scale-[1.02] ${
-              logoStyle === "ajstudioz" ? "ring-2 ring-accent" : ""
+            <div
+              className="h-[200px] overflow-hidden relative bg-background"
+              style={{
+                borderRadius: '24px'
+              }}
+            >
+              <div className="w-full h-full flex items-center justify-center">
+                <span className="text-5xl font-bold font-neoda">CodeCraft</span>
+              </div>
+            </div>
+          </div>
+
+          <div
+            className={`relative block no-underline cursor-pointer group transition-all duration-300 overflow-hidden bg-accent border border-border hover:border-muted ${
+              logoStyle === "ajstudioz" ? "ring-2 ring-primary" : ""
             }`}
+            style={{
+              borderRadius: '30px',
+              padding: '6px'
+            }}
             onClick={() => {
               setLogoStyle("ajstudioz");
               setLogoText("AJ STUDIOZ");
             }}
           >
-            <CardHeader>
-              <div className="flex items-center gap-3">
-                <div className="p-3 rounded-lg bg-accent/10">
-                  <Sparkles className="w-6 h-6 text-accent" />
-                </div>
-                <div>
-                  <CardTitle className="font-neurobyte"><span className="text-green-400">AJ</span> <span className="text-red-500">STUDIOZ</span> Style</CardTitle>
-                  <CardDescription>Bold, futuristic design</CardDescription>
-                </div>
+            <div className="px-4 pt-3 pb-3 relative">
+              <div className="text-foreground text-lg font-medium leading-tight mb-1 group-hover:text-primary transition-colors duration-300 line-clamp-1">
+                <span className="font-neurobyte"><span className="text-green-400">AJ</span> <span className="text-red-500">STUDIOZ</span></span> Style
               </div>
-            </CardHeader>
-            <CardContent>
-              <div className="bg-background rounded-lg p-8 border border-border">
-                <div className="text-center">
-                  <span className="text-4xl font-bold font-neurobyte">
-                    <span className="text-green-400">AJ</span> <span className="text-red-500">STUDIOZ</span>
-                  </span>
-                </div>
+              <div className="text-muted-foreground font-normal text-xs line-clamp-1">
+                Bold, futuristic design
               </div>
-            </CardContent>
-          </Card>
+            </div>
+
+            <div
+              className="h-[200px] overflow-hidden relative bg-background"
+              style={{
+                borderRadius: '24px'
+              }}
+            >
+              <div className="w-full h-full flex items-center justify-center">
+                <span className="text-5xl font-bold font-neurobyte">
+                  <span className="text-green-400">AJ</span> <span className="text-red-500">STUDIOZ</span>
+                </span>
+              </div>
+            </div>
+          </div>
         </div>
 
         {/* Logo Customization */}
