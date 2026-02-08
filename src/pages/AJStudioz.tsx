@@ -133,7 +133,7 @@ const AJStudioz = () => {
           </div>
         </section>
 
-        {/* Brand Tools Section */}
+        {/* Brand Resources Section */}
         <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold font-serif mb-4">
@@ -144,69 +144,45 @@ const AJStudioz = () => {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-            {/* Logo Designer Card */}
-            <Link to="/logo-designer">
-              <Card className="cursor-pointer hover:shadow-lg transition-all hover:scale-[1.02] h-full">
-                <CardHeader>
-                  <div className="flex items-center gap-3">
-                    <div className="p-3 rounded-lg bg-accent/10">
-                      <Palette className="w-6 h-6 text-accent" />
-                    </div>
-                    <div>
-                      <CardTitle>Logo Designer</CardTitle>
-                      <CardDescription>Create custom branded logos</CardDescription>
-                    </div>
-                  </div>
-                </CardHeader>
-                <CardContent>
-                  <div className="space-y-4">
-                    <p className="text-muted-foreground">
-                      Generate beautiful logos with our signature CodeCraft and AJ STUDIOZ styling. 
-                      Download as high-quality PNG files for your projects.
-                    </p>
-                    <div className="flex gap-2 flex-wrap">
-                      <span className="text-xl font-neoda font-bold">CodeCraft</span>
-                      <span className="text-xl font-neurobyte font-bold">
-                        <span className="text-green-400">AJ</span> <span className="text-red-500">STUDIOZ</span>
-                      </span>
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
-            </Link>
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
+            <div className="p-6 rounded-xl border border-border bg-card hover:shadow-lg transition-all">
+              <div className="mb-4">
+                <span className="px-3 py-1 bg-purple-100 text-purple-800 dark:bg-purple-900 dark:text-purple-300 text-xs font-medium rounded-full">Design Tool</span>
+              </div>
+              <h3 className="text-xl font-semibold mb-3">Logo Designer</h3>
+              <p className="text-muted-foreground mb-4">
+                Generate beautiful logos with our signature CodeCraft and <span className="font-neurobyte"><span className="text-green-400">AJ</span> <span className="text-red-500">STUDIOZ</span></span> styling. Download as high-quality PNG files.
+              </p>
+              <Link to="/logo-designer" className="text-foreground hover:text-muted-foreground font-medium flex items-center gap-2">
+                Create Logo →
+              </Link>
+            </div>
 
-            {/* Color Palette Card */}
-            <Link to="/color-palette">
-              <Card className="cursor-pointer hover:shadow-lg transition-all hover:scale-[1.02] h-full">
-                <CardHeader>
-                  <div className="flex items-center gap-3">
-                    <div className="p-3 rounded-lg bg-accent/10">
-                      <Sparkles className="w-6 h-6 text-accent" />
-                    </div>
-                    <div>
-                      <CardTitle>Design System</CardTitle>
-                      <CardDescription>Colors & typography guide</CardDescription>
-                    </div>
-                  </div>
-                </CardHeader>
-                <CardContent>
-                  <div className="space-y-4">
-                    <p className="text-muted-foreground">
-                      Explore our complete color palette and typography system. Copy color codes 
-                      and download fonts for use in your projects.
-                    </p>
-                    <div className="flex gap-2">
-                      <div className="w-10 h-10 rounded-lg bg-green-400" />
-                      <div className="w-10 h-10 rounded-lg bg-red-500" />
-                      <div className="w-10 h-10 rounded-lg bg-[#4d4d3e]" />
-                      <div className="w-10 h-10 rounded-lg bg-[#cc7e6c]" />
-                      <div className="w-10 h-10 rounded-lg bg-[#74b9ff]" />
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
-            </Link>
+            <div className="p-6 rounded-xl border border-border bg-card hover:shadow-lg transition-all">
+              <div className="mb-4">
+                <span className="px-3 py-1 bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-300 text-xs font-medium rounded-full">Design System</span>
+              </div>
+              <h3 className="text-xl font-semibold mb-3">Color Palette</h3>
+              <p className="text-muted-foreground mb-4">
+                Explore our complete color palette with brand colors, theme shades, and accent colors. Copy color codes instantly.
+              </p>
+              <Link to="/color-palette" className="text-foreground hover:text-muted-foreground font-medium flex items-center gap-2">
+                View Colors →
+              </Link>
+            </div>
+
+            <div className="p-6 rounded-xl border border-border bg-card hover:shadow-lg transition-all">
+              <div className="mb-4">
+                <span className="px-3 py-1 bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-300 text-xs font-medium rounded-full">Typography</span>
+              </div>
+              <h3 className="text-xl font-semibold mb-3">Font Library</h3>
+              <p className="text-muted-foreground mb-4">
+                Access our custom fonts including Neurobyte and Neoda. Download font files and view typography samples.
+              </p>
+              <Link to="/color-palette" className="text-foreground hover:text-muted-foreground font-medium flex items-center gap-2">
+                View Fonts →
+              </Link>
+            </div>
           </div>
         </section>
 
