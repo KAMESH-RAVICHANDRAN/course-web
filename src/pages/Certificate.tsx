@@ -249,7 +249,7 @@ const Certificate = () => {
                     alt="AJ STUDIOZ" 
                     className="h-5 w-auto"
                   />
-                  <span className="text-xs font-semibold text-accent">AJ STUDIOZ</span>
+                  <span className="text-xs font-semibold text-accent font-neurobyte">AJ STUDIOZ</span>
                   <span className="text-xs text-muted-foreground mx-2">|</span>
                   <span className="text-xs text-muted-foreground">Certificate ID: {course?.id.slice(0, 8).toUpperCase()}</span>
                 </div>

@@ -73,7 +73,7 @@ const CertificateShowcase = () => {
                 alt="AJ STUDIOZ" 
                 className="h-4 w-auto"
               />
-              <span className="text-xs font-semibold text-accent">AJ STUDIOZ</span>
+              <span className="text-xs font-semibold text-accent font-neurobyte">AJ STUDIOZ</span>
               <span className="text-xs text-muted-foreground mx-2">|</span>
               <span className="text-xs text-muted-foreground">Certificate ID: SAMPLE123</span>
             </div>

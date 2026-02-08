@@ -30,7 +30,7 @@ const AJStudioz = () => {
             <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold font-serif leading-tight">
               About
               <br />
-              <span className="text-accent">AJ STUDIOZ</span>
+              <span className="text-accent font-neurobyte">AJ STUDIOZ</span>
             </h1>
             
             <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto">
@@ -48,7 +48,7 @@ const AJStudioz = () => {
                 Our Mission
               </h2>
               <p className="text-muted-foreground text-lg mb-6">
-                AJ STUDIOZ is committed to democratizing tech education by backing 
+                <span className="font-neurobyte">AJ STUDIOZ</span> is committed to democratizing tech education by backing 
                 innovative learning platforms that make quality coding education 
                 accessible to everyone, everywhere.
               </p>
@@ -98,7 +98,7 @@ const AJStudioz = () => {
               What We Do
             </h2>
             <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-              AJ STUDIOZ provides comprehensive support for educational platforms
+              <span className="font-neurobyte">AJ STUDIOZ</span> provides comprehensive support for educational platforms
             </p>
           </div>
 
@@ -232,7 +232,7 @@ const AJStudioz = () => {
               Ready to Get Started?
             </h2>
             <p className="text-muted-foreground text-lg mb-8 max-w-2xl mx-auto">
-              Join thousands of learners on our platform backed by AJ STUDIOZ and 
+              Join thousands of learners on our platform backed by <span className="font-neurobyte">AJ STUDIOZ</span> and 
               start your coding journey today.
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">

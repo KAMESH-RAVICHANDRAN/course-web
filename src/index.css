@@ -1,3 +1,19 @@
+@font-face {
+  font-family: 'Neurobyte';
+  src: url('/fonts/Neurobyte.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Neurobyte';
+  src: url('/fonts/NeurobyteSlant.otf') format('opentype');
+  font-weight: normal;
+  font-style: italic;
+  font-display: swap;
+}
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -261,5 +277,9 @@ All colors MUST be HSL.
 
   .tag-growth {
     @apply bg-[hsl(var(--tag-growth))] text-primary;
+  }
+
+  .font-neurobyte {
+    font-family: 'Neurobyte', sans-serif;
   }
 }

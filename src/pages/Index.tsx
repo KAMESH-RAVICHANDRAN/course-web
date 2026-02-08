@@ -179,7 +179,7 @@ const Index = () => {
                   className="h-8 w-auto filter drop-shadow-lg"
                   style={{ filter: 'brightness(0) invert(1)' }}
                 />
-                <span className="text-sm font-semibold">AJ STUDIOZ</span>
+                <span className="text-sm font-semibold font-neurobyte">AJ STUDIOZ</span>
               </div>
             </div>
           </div>
