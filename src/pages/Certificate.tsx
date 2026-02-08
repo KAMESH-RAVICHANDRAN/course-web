@@ -236,7 +236,7 @@ const Certificate = () => {
                 <div className="hidden md:block w-px h-12 bg-border" />
                 <div>
                   <p className="uppercase tracking-wider mb-1">Platform</p>
-                  <p className="font-semibold text-foreground">CodeCraft</p>
+                  <p className="font-semibold text-foreground font-neoda">CodeCraft</p>
                 </div>
               </div>
 
@@ -249,7 +249,7 @@ const Certificate = () => {
                     alt="AJ STUDIOZ" 
                     className="h-5 w-auto"
                   />
-                  <span className="text-xs font-semibold text-accent font-neurobyte">AJ STUDIOZ</span>
+                  <span className="text-xs font-semibold text-accent font-neurobyte"><span className="text-green-400">AJ</span> <span className="text-red-500">STUDIOZ</span></span>
                   <span className="text-xs text-muted-foreground mx-2">|</span>
                   <span className="text-xs text-muted-foreground">Certificate ID: {course?.id.slice(0, 8).toUpperCase()}</span>
                 </div>

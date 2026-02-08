@@ -115,7 +115,7 @@ const Auth = () => {
               <div className="w-10 h-10 bg-primary rounded-xl flex items-center justify-center">
                 <Code2 className="w-6 h-6 text-primary-foreground" />
               </div>
-              <span className="text-2xl font-bold font-serif">CodeCraft</span>
+              <span className="text-2xl font-bold font-neoda">CodeCraft</span>
             </a>
             <h1 className="text-3xl font-bold font-serif mt-6">
               {isLogin ? "Welcome back" : "Start learning today"}

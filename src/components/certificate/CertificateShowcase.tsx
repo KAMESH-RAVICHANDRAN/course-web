@@ -60,7 +60,7 @@ const CertificateShowcase = () => {
             <div className="hidden md:block w-px h-10 bg-border" />
             <div>
               <p className="uppercase tracking-wider mb-1">Platform</p>
-              <p className="font-semibold text-foreground">CodeCraft</p>
+              <p className="font-semibold text-foreground font-neoda">CodeCraft</p>
             </div>
           </div>
 
@@ -73,7 +73,7 @@ const CertificateShowcase = () => {
                 alt="AJ STUDIOZ" 
                 className="h-4 w-auto"
               />
-              <span className="text-xs font-semibold text-accent font-neurobyte">AJ STUDIOZ</span>
+              <span className="text-xs font-semibold text-accent font-neurobyte"><span className="text-green-400">AJ</span> <span className="text-red-500">STUDIOZ</span></span>
               <span className="text-xs text-muted-foreground mx-2">|</span>
               <span className="text-xs text-muted-foreground">Certificate ID: SAMPLE123</span>
             </div>

@@ -15,8 +15,8 @@ const About = () => {
             alt="CodeCraft" 
             className="w-16 h-16 rounded-2xl mx-auto mb-6"
           />
-          <h1 className="text-4xl md:text-5xl font-bold font-serif mb-4 animate-slide-down">
-            About CodeCraft
+          <h1 className="text-4xl md:text-5xl font-bold font-serif mb-4 animate-slide-down flex items-baseline justify-center gap-3">
+            <span>About</span> <span className="font-neoda">CodeCraft</span>
           </h1>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto animate-slide-up stagger-1">
             We believe everyone deserves access to quality coding education. 
@@ -29,7 +29,7 @@ const About = () => {
           <div className="bg-card rounded-3xl p-8 md:p-12 border border-border/50">
             <h2 className="text-2xl md:text-3xl font-bold font-serif mb-6">Our Mission</h2>
             <p className="text-muted-foreground text-lg leading-relaxed mb-6">
-              CodeCraft was founded with a simple belief: everyone should have the opportunity to learn 
+              <span className="font-neoda">CodeCraft</span> was founded with a simple belief: everyone should have the opportunity to learn 
               how to code, regardless of their background, location, or financial situation.
             </p>
             <p className="text-muted-foreground text-lg leading-relaxed">

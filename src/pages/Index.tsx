@@ -154,7 +154,7 @@ const Index = () => {
               Ready to start coding?
             </h2>
             <p className="text-lg md:text-xl opacity-90 max-w-2xl mx-auto mb-8">
-              Join CodeCraft today and begin your journey to becoming a web developer. 
+              Join <span className="font-neoda">CodeCraft</span> today and begin your journey to becoming a web developer. 
               It's completely free to get started.
             </p>
             <Button 
@@ -179,7 +179,7 @@ const Index = () => {
                   className="h-8 w-auto filter drop-shadow-lg"
                   style={{ filter: 'brightness(0) invert(1)' }}
                 />
-                <span className="text-sm font-semibold font-neurobyte">AJ STUDIOZ</span>
+                <span className="text-sm font-semibold font-neurobyte"><span className="text-green-400">AJ</span> <span className="text-red-500">STUDIOZ</span></span>
               </div>
             </div>
           </div>

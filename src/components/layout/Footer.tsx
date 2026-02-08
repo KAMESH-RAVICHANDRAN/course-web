@@ -21,7 +21,7 @@ const Footer = () => {
               <li><Link to="/courses" className="hover:text-accent transition-colors">All Courses</Link></li>
               <li><Link to="/dashboard" className="hover:text-accent transition-colors">Dashboard</Link></li>
               <li><Link to="/about" className="hover:text-accent transition-colors">About Us</Link></li>
-              <li><Link to="/aj-studioz" className="hover:text-accent transition-colors font-neurobyte">AJ STUDIOZ</Link></li>
+              <li><Link to="/aj-studioz" className="hover:text-accent transition-colors font-neurobyte"><span className="text-green-400">AJ</span> <span className="text-red-500">STUDIOZ</span></Link></li>
             </ul>
           </div>
           <div>
@@ -47,7 +47,7 @@ const Footer = () => {
               alt="CodeCraft" 
               className="w-8 h-8 rounded-lg"
             />
-            <span className="text-lg font-bold font-serif">CodeCraft</span>
+            <span className="text-lg font-bold font-neoda">CodeCraft</span>
           </div>
           <div className="text-sm text-muted-foreground text-center md:text-right">
             <p>© 2025 CodeCraft. Learn to code for free.</p>
@@ -59,7 +59,7 @@ const Footer = () => {
                   alt="AJ STUDIOZ" 
                   className="h-5 w-auto"
                 />
-                <span className="text-accent font-semibold text-xs font-neurobyte">AJ STUDIOZ</span>
+                <span className="text-accent font-semibold text-xs font-neurobyte"><span className="text-green-400">AJ</span> <span className="text-red-500">STUDIOZ</span></span>
               </Link>
             </div>
           </div>

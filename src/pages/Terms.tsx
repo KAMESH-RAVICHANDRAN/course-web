@@ -17,7 +17,7 @@ const Terms = () => {
           <section>
             <h2 className="text-2xl font-bold font-serif mb-4">1. Acceptance of Terms</h2>
             <p className="text-muted-foreground leading-relaxed">
-              By accessing and using CodeCraft, you agree to be bound by these Terms of Service. 
+              By accessing and using <span className="font-neoda">CodeCraft</span>, you agree to be bound by these Terms of Service. 
               If you do not agree to these terms, please do not use our platform.
             </p>
           </section>
@@ -25,7 +25,7 @@ const Terms = () => {
           <section>
             <h2 className="text-2xl font-bold font-serif mb-4">2. Use of Service</h2>
             <p className="text-muted-foreground leading-relaxed mb-4">
-              CodeCraft provides free online coding education. You may use our services for personal, 
+              <span className="font-neoda">CodeCraft</span> provides free online coding education. You may use our services for personal, 
               non-commercial learning purposes. You agree not to:
             </p>
             <ul className="list-disc list-inside text-muted-foreground space-y-2">
@@ -49,7 +49,7 @@ const Terms = () => {
           <section>
             <h2 className="text-2xl font-bold font-serif mb-4">4. Intellectual Property</h2>
             <p className="text-muted-foreground leading-relaxed">
-              All content on CodeCraft, including courses, lessons, and certificates, is protected 
+              All content on <span className="font-neoda">CodeCraft</span>, including courses, lessons, and certificates, is protected 
               by copyright and other intellectual property laws. You may not copy, modify, or 
               distribute our content without explicit permission.
             </p>
@@ -67,7 +67,7 @@ const Terms = () => {
           <section>
             <h2 className="text-2xl font-bold font-serif mb-4">6. Disclaimer</h2>
             <p className="text-muted-foreground leading-relaxed">
-              CodeCraft is provided "as is" without warranties of any kind. While we strive to 
+              <span className="font-neoda">CodeCraft</span> is provided "as is" without warranties of any kind. While we strive to 
               provide accurate and up-to-date content, we make no guarantees about the completeness 
               or accuracy of our materials.
             </p>

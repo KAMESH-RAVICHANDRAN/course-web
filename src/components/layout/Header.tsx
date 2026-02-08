@@ -55,7 +55,7 @@ const Header = () => {
                 alt="CodeCraft" 
                 className="w-7 h-7 sm:w-8 sm:h-8 rounded-lg flex-shrink-0"
               />
-              <span className="text-base sm:text-xl font-bold font-serif truncate">CodeCraft</span>
+              <span className="text-base sm:text-xl font-bold font-neoda truncate">CodeCraft</span>
             </Link>
           </div>
 
